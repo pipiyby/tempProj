@@ -11,7 +11,6 @@ import uuid from "uuid/v4";
 
 // Get ip address and port for client details
 import {getIpAddressAndPort} from "./utils/helper";
-import {checkConfiguration} from "./utils/config";
 import connect from "connect";
 
 //get ipAddress and port
@@ -59,13 +58,6 @@ global.logger = logger;
 // Check configuration before starting the server
 //
 //**********************************************
-
-
-if (!checkConfiguration()) {
-	process.exit(1);
-} else {
-	global.logger.info("All configurations are available to start the server", {operationName: "createServer"});
-}
 
 //**********************************************
 //
